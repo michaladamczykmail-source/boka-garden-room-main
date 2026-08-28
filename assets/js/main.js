@@ -115,30 +115,46 @@
       });
   }
 
-  function wireForm(formId, statusId, buildPayload) {
-    var form = document.getElementById(formId);
-    var statusEl = document.getElementById(statusId);
-    if (!form) return;
-    form.addEventListener('submit', function (e) {
+  /* ---- Kontakt: walidacja z podświetleniem pól (jak na promocja.bokagardenroom.pl) ---- */
+  var kontaktForm = document.getElementById('kontaktForm');
+  var kontaktStatus = document.getElementById('kontaktFormStatus');
+  if (kontaktForm) {
+    var fNameInput = kontaktForm.querySelector('[name=name]');
+    var fContactInput = kontaktForm.querySelector('[name=contact]');
+    [fNameInput, fContactInput].forEach(function (input) {
+      input.addEventListener('input', function () { input.classList.remove('invalid'); });
+    });
+
+    kontaktForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      if (!form.checkValidity()) { form.reportValidity(); return; }
-      var payload = buildPayload(form);
-      payload.website = ''; // honeypot (zawsze puste — pole nie jest renderowane)
-      payload.elapsed = Date.now() - pageLoadedAt;
-      submitContact(payload, statusEl, form);
+      var name = fNameInput.value.trim();
+      var contact = fContactInput.value.trim();
+      var consent = kontaktForm.querySelector('[name=consent]').checked;
+
+      fNameInput.classList.toggle('invalid', !name);
+      fContactInput.classList.toggle('invalid', !contact);
+
+      if (!name || !contact) {
+        setStatus(kontaktStatus, false, 'Podaj imię oraz telefon lub e-mail, żebyśmy mogli się odezwać.');
+        return;
+      }
+      if (!consent) {
+        setStatus(kontaktStatus, false, 'Zaznacz zgodę na kontakt zwrotny, żeby wysłać zapytanie.');
+        return;
+      }
+
+      var model = (kontaktForm.querySelector('[name=model]') || {}).value || '';
+      submitContact({
+        name: name,
+        contact: contact,
+        model: ALLOWED_MODELS.indexOf(model) !== -1 ? model : 'Projekt na wymiar',
+        message: (kontaktForm.querySelector('[name=message]') || {}).value || '',
+        consent: consent,
+        website: '', // honeypot (zawsze puste — pole nie jest renderowane)
+        elapsed: Date.now() - pageLoadedAt
+      }, kontaktStatus, kontaktForm);
     });
   }
-
-  wireForm('kontaktForm', 'kontaktFormStatus', function (form) {
-    var model = (form.querySelector('[name=model]') || {}).value || '';
-    return {
-      name: (form.querySelector('[name=name]') || {}).value || 'Klient',
-      contact: (form.querySelector('[name=contact]') || {}).value || '',
-      model: ALLOWED_MODELS.indexOf(model) !== -1 ? model : 'Projekt na wymiar',
-      message: (form.querySelector('[name=message]') || {}).value || '',
-      consent: form.querySelector('[name=consent]').checked
-    };
-  });
 
   /* ---- "Zobacz na żywo" — mapa Google na kliknięcie (bez cookies do czasu zgody) ---- */
   var mapPlaceholder = document.getElementById('mapPlaceholder');

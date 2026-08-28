@@ -240,6 +240,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; margin: 0 0
 }
 .field select { padding: 12px 14px; }
 .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--color-accent-dark); }
+.field input.invalid, .field select.invalid, .field textarea.invalid { border-color: var(--color-promo); }
 .field textarea { resize: vertical; min-height: 110px; }
 .consent { display: flex; gap: 10px; align-items: flex-start; margin-top: 18px; font-size: .78rem; color: var(--color-text-muted); }
 .consent input { margin-top: 3px; }
