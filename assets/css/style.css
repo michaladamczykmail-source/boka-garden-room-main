@@ -127,7 +127,10 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; margin: 0 0
   background: var(--color-promo); color: #fff; font-weight: 700; font-size: .7rem;
   letter-spacing: .03em; text-transform: uppercase; padding: 6px 10px;
 }
-.product-card.configurator-card { display: flex; flex-direction: column; justify-content: center; background: var(--color-bg-alt); padding: 20px; }
+.product-card.configurator-card { background: var(--color-bg-alt); }
+.configurator-card .thumb { background: #fff; }
+.configurator-card .thumb img { object-fit: contain; padding: 24px; }
+.configurator-card .configurator-note { font-size: .86rem; color: var(--color-text-muted); margin-bottom: 16px; }
 
 /* ---- Product detail ---- */
 .product-detail {
@@ -146,6 +149,8 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; margin: 0 0
 .product-detail:nth-child(even) .product-detail-grid > div:last-child { order: 1; }
 .product-detail .gallery-main { aspect-ratio: 4/3; overflow: hidden; margin-bottom: 12px; cursor: zoom-in; }
 .product-detail .gallery-main img { width: 100%; height: 100%; object-fit: cover; }
+/* na przemiennym (kremowym) tle zdjęcie dostaje białą oprawę, żeby nie "gryzło się" z tłem sekcji */
+.product-detail:nth-child(even) .gallery-main { background: #fff; padding: 16px; }
 .product-detail .gallery-thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
 .product-detail .gallery-thumbs img { aspect-ratio: 1; object-fit: cover; cursor: zoom-in; border: 2px solid transparent; }
 .product-detail .gallery-thumbs img:hover { border-color: var(--color-accent); }
@@ -160,16 +165,20 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; margin: 0 0
 .product-detail .cta-row { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
 
 .spec-list {
-  margin-top: 40px;
+  margin-top: 28px;
+  list-style: none;
+  padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 28px 32px;
+  gap: 10px 32px;
 }
-.spec-item { display: flex; gap: 14px; align-items: flex-start; }
-.spec-item .icon { width: 40px; height: 40px; flex: none; }
-.spec-item .icon img { width: 100%; height: 100%; object-fit: contain; }
-.spec-item h4 { font-size: .95rem; margin-bottom: 2px; }
-.spec-item p { margin: 0; font-size: .85rem; color: var(--color-text-muted); }
+.spec-list li {
+  position: relative; padding-left: 16px; font-size: .88rem; color: var(--color-text-muted); line-height: 1.5;
+}
+.spec-list li::before {
+  content: ""; position: absolute; left: 0; top: .6em; width: 5px; height: 5px; background: var(--color-accent);
+}
+.spec-list li strong { color: var(--color-text); font-weight: 700; }
 
 .options-note {
   margin-top: 40px; padding: 20px 24px; background: #fff; border: 1px solid var(--color-border);
