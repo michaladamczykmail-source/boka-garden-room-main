@@ -142,16 +142,44 @@
 
   /* ---- "Zobacz na żywo" — mapa Google na kliknięcie (bez cookies do czasu zgody) ---- */
   var mapPlaceholder = document.getElementById('mapPlaceholder');
+  function loadMap() {
+    if (!mapPlaceholder || !mapPlaceholder.parentElement) return;
+    var frame = mapPlaceholder.parentElement;
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://www.google.com/maps?q=Aroniowa+9A,+62-023+Robakowo&output=embed';
+    iframe.loading = 'lazy';
+    iframe.referrerPolicy = 'no-referrer-when-downgrade';
+    iframe.setAttribute('title', 'Mapa — BOKA Garden Room, Robakowo');
+    frame.replaceChild(iframe, mapPlaceholder);
+    mapPlaceholder = null;
+  }
   if (mapPlaceholder) {
-    mapPlaceholder.addEventListener('click', function () {
-      var frame = mapPlaceholder.parentElement;
-      var iframe = document.createElement('iframe');
-      iframe.src = 'https://www.google.com/maps?q=Aroniowa+9A,+62-023+Robakowo&output=embed';
-      iframe.loading = 'lazy';
-      iframe.referrerPolicy = 'no-referrer-when-downgrade';
-      iframe.setAttribute('title', 'Mapa — BOKA Garden Room, Robakowo');
-      frame.replaceChild(iframe, mapPlaceholder);
-    });
+    mapPlaceholder.addEventListener('click', loadMap);
+  }
+
+  /* ---- Baner cookies ---- */
+  var COOKIE_CONSENT_KEY = 'boka_cookie_consent';
+  var cookieBanner = document.getElementById('cookieBanner');
+  if (cookieBanner) {
+    var consent = null;
+    try { consent = localStorage.getItem(COOKIE_CONSENT_KEY); } catch (e) {}
+
+    if (consent === 'all') {
+      loadMap();
+    } else if (!consent) {
+      cookieBanner.hidden = false;
+    }
+
+    function decideCookies(value) {
+      try { localStorage.setItem(COOKIE_CONSENT_KEY, value); } catch (e) {}
+      cookieBanner.hidden = true;
+      if (value === 'all') loadMap();
+    }
+
+    var essentialBtn = document.getElementById('cookieEssential');
+    var acceptAllBtn = document.getElementById('cookieAcceptAll');
+    if (essentialBtn) essentialBtn.addEventListener('click', function () { decideCookies('essential'); });
+    if (acceptAllBtn) acceptAllBtn.addEventListener('click', function () { decideCookies('all'); });
   }
 
 })();
