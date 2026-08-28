@@ -1,0 +1,7 @@
+api/contact-config.php
+.DS_Store
+images/
+_contact_sheet_full.jpg
+_sheet_top.jpg
+_sheet_bottom.jpg
+.claude/scheduled_tasks.lock
