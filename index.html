@@ -8,27 +8,31 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&family=Raleway:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=20260828f">
+<link rel="stylesheet" href="assets/css/style.css?v=20260829a">
 </head>
 <body>
 
 <header class="site-header">
   <div class="container">
     <a href="#top" class="logo"><img src="assets/img/logo.svg" alt="">BOKA GARDEN ROOM</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="#produkty">Produkty</a></li>
-      <li><a href="#konfigurator">Konfigurator</a></li>
-      <li><a href="#o-nas">O nas</a></li>
-      <li><a href="assets/docs/katalog-boka.pdf">Katalog</a></li>
-      <li><a href="#kontakt">Kontakt</a></li>
-    </ul>
+    <div class="nav-right">
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#produkty">Produkty</a></li>
+        <li><a href="#jak-to-dziala">Jak to działa</a></li>
+        <li><a href="#o-nas">O nas</a></li>
+        <li><a href="assets/docs/katalog-boka.pdf">Katalog</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+      <a href="#kontakt" class="btn nav-cta">Zapytaj o wycenę</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">&#9776;</button>
+    </div>
   </div>
 </header>
 
 <section class="hero" id="top" style="background-image:url('assets/img/hero-interior.webp')">
   <div class="hero-content">
     <h1>Twoje prywatne <strong>biuro w ogrodzie</strong></h1>
+    <p class="hero-sub">Realizacja pod klucz, dostawa i montaż w całej Polsce — wnosisz biurko i krzesło, i możesz zaczynać.</p>
     <a href="#produkty" class="btn">Zobacz</a>
   </div>
 </section>
@@ -40,23 +44,25 @@
     <h2 class="section-title">Nasze <strong>Produkty</strong></h2>
     <p class="section-sub">
       Wszystkie ceny obejmują realizację pod klucz wraz z wykończeniem. Wnosisz biurko i krzesło — i możesz pracować od razu!<br>
-      Kolory, materiały oraz wybrane elementy wykończenia możemy dopasować indywidualnie do Twoich potrzeb :)
+      Kolory, materiały oraz wybrane elementy wykończenia możemy dopasować indywidualnie do Twoich potrzeb.
     </p>
     <div class="products-grid">
 
       <div class="product-card">
         <a href="#boka-one" class="thumb"><img src="assets/img/boka-one-card.webp" alt="Boka ONE" loading="lazy"></a>
         <h3>Boka ONE</h3>
-        <div class="price">56 900 zł brutto</div>
+        <div class="price-row-card"><span class="price-old-card">69 000 zł</span><span class="price">56 900 zł brutto</span></div>
         <div class="price-net">(46 200 zł netto + 23% VAT)</div>
         <a href="#boka-one" class="btn btn-outline">Szczegóły</a>
       </div>
 
       <div class="product-card">
-        <a href="#boka-two" class="thumb"><img src="assets/img/boka-two-card.webp" alt="Boka TWO" loading="lazy"></a>
-        <div class="badge">Ostatni egzemplarz dostępny od ręki!</div>
+        <a href="#boka-two" class="thumb">
+          <img src="assets/img/boka-two-card.webp" alt="Boka TWO" loading="lazy">
+          <span class="badge">Ostatni egzemplarz</span>
+        </a>
         <h3>Boka TWO</h3>
-        <div class="price">57 900 zł brutto</div>
+        <div class="price-row-card"><span class="price-old-card">69 000 zł</span><span class="price">57 900 zł brutto</span></div>
         <div class="price-net">(46 900 zł netto + 23% VAT)</div>
         <a href="#boka-two" class="btn btn-outline">Szczegóły</a>
       </div>
@@ -72,7 +78,7 @@
       <div class="product-card">
         <a href="#sauna-modern" class="thumb"><img src="assets/img/sauna-modern-card.webp" alt="Sauna MODERN" loading="lazy"></a>
         <h3>Sauna MODERN</h3>
-        <div class="price">49 900 zł brutto</div>
+        <div class="price-row-card"><span class="price-old-card">56 000 zł</span><span class="price">49 900 zł brutto</span></div>
         <div class="price-net">(39 900 zł netto + 23% VAT)</div>
         <a href="#sauna-modern" class="btn btn-outline">Szczegóły</a>
       </div>
@@ -80,16 +86,16 @@
       <div class="product-card">
         <a href="#sauna-box" class="thumb"><img src="assets/img/sauna-box-card.webp" alt="Sauna BOX" loading="lazy"></a>
         <h3>Sauna BOX</h3>
-        <div class="price">45 900 zł brutto</div>
+        <div class="price-row-card"><span class="price-old-card">53 000 zł</span><span class="price">45 900 zł brutto</span></div>
         <div class="price-net">(37 300 zł netto + 23% VAT)</div>
         <a href="#sauna-box" class="btn btn-outline">Szczegóły</a>
       </div>
 
       <div class="product-card configurator-card">
-        <img src="assets/img/floor-plan.webp" alt="Konfigurator" style="margin-bottom:16px;">
-        <h3>Konfigurator</h3>
-        <p style="font-size:.86rem;color:var(--color-text-muted);margin-bottom:16px;">Sam zaprojektuj swoją przestrzeń</p>
-        <a href="#konfigurator" class="btn">Konfigurator</a>
+        <img src="assets/img/floor-plan.webp" alt="Projekt na wymiar" style="margin-bottom:16px;">
+        <h3>Projekt na wymiar</h3>
+        <p style="font-size:.86rem;color:var(--color-text-muted);margin-bottom:16px;">Potrzebujesz innego układu? Zobacz, jak wygląda proces.</p>
+        <a href="#jak-to-dziala" class="btn">Jak to działa</a>
       </div>
 
     </div>
@@ -100,16 +106,16 @@
 <article class="product-detail" id="boka-two">
   <div class="container product-detail-grid">
     <div>
-      <div class="gallery-main"><img data-lightbox-group="boka-two" src="assets/img/boka-two-exterior-2.webp" alt="Boka TWO"></div>
+      <div class="gallery-main"><img data-lightbox-group="boka-two" src="assets/img/boka-two-card.webp" alt="Boka TWO"></div>
       <div class="gallery-thumbs">
-        <img data-lightbox-group="boka-two" src="assets/img/boka-two-exterior-2.webp" alt="">
+        <img data-lightbox-group="boka-two" src="assets/img/boka-two-card.webp" alt="">
         <img data-lightbox-group="boka-two" src="assets/img/interior-office-1.webp" alt="">
         <img data-lightbox-group="boka-two" src="assets/img/interior-office-2.webp" alt="">
         <img data-lightbox-group="boka-two" src="assets/img/exterior-evening-lit.webp" alt="">
       </div>
     </div>
     <div>
-      <div class="kicker">Promocja!!! Ostatni egzemplarz dostępny od ręki</div>
+      <div class="kicker">Ostatni egzemplarz — dostępny od ręki</div>
       <h2>Model Boka TWO</h2>
       <p class="desc">Nowoczesne biuro ogrodowe stworzone z myślą o komfortowej pracy przez cały rok. Ocieplona konstrukcja, duże ciepłe 3-szybowe przeszklenia i przytulne wykończenie wnętrza tworzą spokojną przestrzeń tuż obok domu. To gotowy moduł, który może pełnić funkcję biura, gabinetu, pokoju relaksu lub magazynu do pakowania paczek. Wystawiamy fakturę VAT — idealne rozwiązanie również dla firm i osób prowadzących działalność.</p>
       <div class="price-row">
@@ -198,7 +204,7 @@
       <p class="desc">Sauna BOX — kompaktowa sauna ogrodowa w nowoczesnej formie. Minimalistyczna bryła, duże przeszklenie, front z thermo drewna i ciepłe wnętrze ze świerka skandynawskiego. Idealna prywatna strefa relaksu nawet w mniejszym ogrodzie. Dobrze ocieplona.</p>
       <div class="price-row">
         <span class="price-old">53 000 zł</span>
-        <span class="price-new">Promocja!!! 45 900 zł brutto</span>
+        <span class="price-new">Promocja 45 900 zł brutto</span>
         <div class="price-net">(cena netto 46 500 zł + VAT 23%)</div>
       </div>
       <div class="cta-row">
@@ -249,7 +255,7 @@
       <p class="desc">Model MODERN to sauna z przedsionkiem — większy komfort korzystania z sauny w ogrodzie. Osobna strefa wejściowa, nowoczesna bryła, duże przeszklenie i naturalne wnętrze tworzą prywatną przestrzeń wellness tuż obok domu.</p>
       <div class="price-row">
         <span class="price-old">56 000 zł</span>
-        <span class="price-new">Promocja!!! 49 900 zł brutto</span>
+        <span class="price-new">Promocja 49 900 zł brutto</span>
         <div class="price-net">(cena netto 40 600 zł + VAT 23%)</div>
       </div>
       <div class="cta-row">
@@ -317,12 +323,12 @@
   </div>
 </article>
 
-<!-- ===== KONFIGURATOR ===== -->
-<section class="section section-alt" id="konfigurator">
+<!-- ===== JAK TO DZIAŁA ===== -->
+<section class="section section-alt" id="jak-to-dziala">
   <div class="container">
     <div class="section-rule"></div>
-    <h2 class="section-title">Twoja Przestrzeń — <strong>Twoje Zasady</strong></h2>
-    <p class="section-sub">Potrzebujesz innego modelu? Możesz sam skonfigurować swój Garden Room.</p>
+    <h2 class="section-title">Jak <strong>to działa</strong></h2>
+    <p class="section-sub">Od pomysłu do gotowego Garden Room w 6 krokach.</p>
 
     <div class="configurator-steps">
       <div class="config-step"><div class="num">1</div><h4>Określ funkcję i wymiary</h4><p>To Ty decydujesz, jaką funkcję będzie pełnić Twoja przestrzeń — od biura, przez siłownię, saunę, po studio nagraniowe.</p></div>
@@ -344,7 +350,7 @@
   <div class="container">
     <div class="section-rule"></div>
     <h2 class="section-title">O <strong>nas</strong></h2>
-    <p class="section-sub">Pasjonaci drewna i ogrodów :)</p>
+    <p class="section-sub">Pasjonaci drewna i ogrodów.</p>
     <div class="about-grid">
       <div class="about-card">
         <div class="photo"><img src="assets/img/michal.webp" alt="Michał"></div>
@@ -493,6 +499,6 @@
   </div>
 </div>
 
-<script src="assets/js/main.js?v=20260828f"></script>
+<script src="assets/js/main.js?v=20260829a"></script>
 </body>
 </html>
