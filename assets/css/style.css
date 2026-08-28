@@ -88,7 +88,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; margin: 0 0
   min-height: 78vh;
   display: flex; align-items: center; justify-content: center;
   text-align: center;
-  background-size: cover; background-position: center;
+  background-size: cover; background-position: center; background-attachment: fixed;
   color: #fff;
 }
 .hero::after {
@@ -278,7 +278,7 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; margin: 0 0
   .product-detail-grid { grid-template-columns: 1fr; }
   .about-grid { grid-template-columns: 1fr; }
   .configurator-steps { grid-template-columns: 1fr; }
-  .parallax-section { background-attachment: scroll; }
+  .parallax-section, .hero { background-attachment: scroll; }
   .visit-card { grid-template-columns: 1fr; padding: 28px; }
   .contact-wrap { grid-template-columns: 1fr; }
   .contact-form { border-right: none; border-bottom: 1px solid var(--color-border); padding: 32px 24px; }
