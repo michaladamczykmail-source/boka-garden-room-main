@@ -19,6 +19,30 @@
     });
   }
 
+  /* ---- Header: chowa się przy scrollu w dół, pokazuje przy scrollu w górę ---- */
+  var siteHeader = document.querySelector('.site-header');
+  if (siteHeader) {
+    var lastScrollY = window.scrollY;
+    var headerHidden = false;
+    var ticking = false;
+    window.addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        var y = window.scrollY;
+        if (!navLinks || !navLinks.classList.contains('open')) {
+          var shouldHide = y > lastScrollY && y > 80;
+          if (shouldHide !== headerHidden) {
+            headerHidden = shouldHide;
+            siteHeader.classList.toggle('site-header--hidden', headerHidden);
+          }
+        }
+        lastScrollY = y;
+        ticking = false;
+      });
+    }, { passive: true });
+  }
+
   /* ---- Lightbox gallery ---- */
   var lightbox = document.getElementById('lightbox');
   var lbImage = document.getElementById('lbImage');
