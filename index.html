@@ -19,9 +19,8 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#produkty">Produkty</a></li>
       <li><a href="#konfigurator">Konfigurator</a></li>
-      <li><a href="#wycena">Wycena</a></li>
       <li><a href="#o-nas">O nas</a></li>
-      <li><a href="#katalog">Katalog</a></li>
+      <li><a href="assets/docs/katalog-boka.pdf">Katalog</a></li>
       <li><a href="#kontakt">Kontakt</a></li>
     </ul>
   </div>
@@ -120,8 +119,8 @@
       </div>
       <p style="font-size:.85rem;color:var(--color-text-muted)">Do obejrzenia w Robakowie pod Poznaniem. Ostatnia sztuka dostępna od ręki — a gdy zmienisz adres, zabierzesz go ze sobą!</p>
       <div class="cta-row">
-        <a href="#wycena" class="btn">Poproś o wycenę</a>
-        <a href="#wizyta" class="btn btn-outline">Obejrzyj na żywo</a>
+        <a href="#kontakt" class="btn">Poproś o wycenę</a>
+        <a href="#zobacz-na-zywo" class="btn btn-outline">Obejrzyj na żywo</a>
       </div>
 
       <div class="spec-list">
@@ -163,8 +162,8 @@
       </div>
       <p style="font-size:.85rem;color:var(--color-text-muted)">Przykładowy egzemplarz dostępny do obejrzenia w siedzibie firmy w Robakowie pod Poznaniem — dostępne na zamówienie i w pełni konfigurowalne.</p>
       <div class="cta-row">
-        <a href="#wycena" class="btn">Poproś o wycenę</a>
-        <a href="#wizyta" class="btn btn-outline">Obejrzyj na żywo</a>
+        <a href="#kontakt" class="btn">Poproś o wycenę</a>
+        <a href="#zobacz-na-zywo" class="btn btn-outline">Obejrzyj na żywo</a>
       </div>
 
       <div class="spec-list">
@@ -203,7 +202,7 @@
         <div class="price-net">(cena netto 46 500 zł + VAT 23%)</div>
       </div>
       <div class="cta-row">
-        <a href="#wycena" class="btn">Napisz do nas</a>
+        <a href="#kontakt" class="btn">Napisz do nas</a>
       </div>
 
       <div class="spec-list">
@@ -254,7 +253,7 @@
         <div class="price-net">(cena netto 40 600 zł + VAT 23%)</div>
       </div>
       <div class="cta-row">
-        <a href="#wycena" class="btn">Napisz do nas</a>
+        <a href="#kontakt" class="btn">Napisz do nas</a>
       </div>
 
       <div class="spec-list">
@@ -302,8 +301,8 @@
         <div class="price-net">(cena netto 63 300 zł + VAT 23%)</div>
       </div>
       <div class="cta-row">
-        <a href="#wycena" class="btn">Poproś o wycenę</a>
-        <a href="#wizyta" class="btn btn-outline">Obejrzyj na żywo</a>
+        <a href="#kontakt" class="btn">Poproś o wycenę</a>
+        <a href="#zobacz-na-zywo" class="btn btn-outline">Obejrzyj na żywo</a>
       </div>
 
       <div class="spec-list">
@@ -412,43 +411,6 @@
   </div>
 </section>
 
-<!-- ===== WYCENA (quick quote) ===== -->
-<section class="section" id="wycena">
-  <div class="container">
-    <div class="section-rule"></div>
-    <h2 class="section-title">Poproś o <strong>wycenę</strong></h2>
-    <p class="section-sub">Napisz do nas, jaki model Cię interesuje — odpiszemy z indywidualną wyceną i dostępnymi terminami.</p>
-    <form class="config-form" id="quoteForm" novalidate>
-      <div class="form-field">
-        <label for="q-name">Imię i nazwisko</label>
-        <input type="text" id="q-name" name="name">
-      </div>
-      <div class="form-field">
-        <label for="q-email">E-mail *</label>
-        <input type="email" id="q-email" name="email" required>
-      </div>
-      <div class="form-field">
-        <label for="q-phone">Telefon (opcjonalnie)</label>
-        <input type="tel" id="q-phone" name="phone">
-      </div>
-      <div class="form-field">
-        <label for="q-model">Który model Cię interesuje?</label>
-        <input type="text" id="q-model" name="model" placeholder="np. Boka TWO">
-      </div>
-      <div class="form-field">
-        <label for="q-message">Wiadomość</label>
-        <textarea id="q-message" name="message"></textarea>
-      </div>
-      <label class="consent-field">
-        <input type="checkbox" name="consent" required>
-        Zgadzam się na przetwarzanie moich danych osobowych przez BOKA Garden Room zgodnie z art. 6 ust. 1 lit. a RODO, w celu udzielenia odpowiedzi na przesłane zapytanie.
-      </label>
-      <button type="submit" class="btn btn-block">Wyślij zapytanie</button>
-      <div class="form-status" id="quoteFormStatus"></div>
-    </form>
-  </div>
-</section>
-
 <!-- ===== O NAS ===== -->
 <section class="section section-alt" id="o-nas">
   <div class="container">
@@ -472,68 +434,114 @@
   </div>
 </section>
 
-<!-- ===== WIZYTA ===== -->
-<section class="section" id="wizyta">
-  <div class="container visit-grid">
-    <div>
-      <div class="section-rule" style="margin-left:0"></div>
-      <h2 class="section-title" style="text-align:left">Zobacz nasze Garden Room <strong>na żywo</strong></h2>
-      <p style="color:var(--color-text-muted)">Umów wizytę i obejrzyj dwie przykładowe realizacje — BOKA ONE oraz BOKA TWO. Pokażemy Ci jakość wykonania, detale i możliwości konfiguracji. Brakuje Ci czasu? Umówmy spotkanie online — pokażemy realizacje na kamerze i odpowiemy na Twoje pytania.</p>
-      <p style="font-weight:700">Termin dopasujemy do Ciebie.</p>
-      <form id="visitForm" novalidate style="margin-top:20px;">
-        <div style="display:flex;gap:10px;flex-wrap:wrap;">
-          <input type="email" name="email" placeholder="Email *" required style="flex:1;min-width:220px;padding:12px 14px;border:1px solid var(--color-border);font:inherit;">
-          <button type="submit" class="btn">Umów wizytę</button>
+<!-- ===== ZOBACZ NA ŻYWO ===== -->
+<section class="section parallax-section" id="zobacz-na-zywo" style="background-image:url('assets/img/exterior-evening-lit.webp')">
+  <div class="container">
+    <div class="visit-card">
+      <div class="visit-copy">
+        <div class="eyebrow">Zobacz na żywo</div>
+        <h2>Zobacz nasze Garden Room <strong>na żywo</strong></h2>
+        <p>Umów wizytę i obejrzyj dwie przykładowe realizacje — BOKA ONE oraz BOKA TWO. Pokażemy Ci jakość wykonania, detale i możliwości konfiguracji. Brakuje Ci czasu? Umówmy spotkanie online — pokażemy realizacje na kamerze i odpowiemy na Twoje pytania.</p>
+        <div class="cta-row">
+          <a href="#kontakt" class="btn">Umów wizytę</a>
         </div>
-        <label class="consent-field" style="margin-top:12px;">
-          <input type="checkbox" name="consent" required>
-          Zgadzam się na przetwarzanie moich danych osobowych przez BOKA Garden Room w celu umówienia wizyty.
-        </label>
-      </form>
-      <div class="form-status" id="visitFormStatus"></div>
-      <div class="hours-table">
-        <div><span>Poniedziałek – Piątek</span><strong>9:00 – 17:00</strong></div>
-        <div><span>Sobota</span><strong>9:00 – 13:00</strong></div>
+      </div>
+      <div class="map-frame">
+        <button class="embed-placeholder" type="button" id="mapPlaceholder">
+          <div class="ep-inner">
+            <div class="ep-icon">📍</div>
+            <div class="ep-label">Pokaż mapę</div>
+            <div class="ep-note">Załaduje mapę Google i włączy jej pliki cookie.</div>
+          </div>
+        </button>
       </div>
     </div>
-    <div>
-      <img src="assets/img/map-poznan.webp" alt="BOKA Garden Room, Robakowo pod Poznaniem">
+  </div>
+</section>
+
+<!-- ===== KONTAKT ===== -->
+<section class="section section-alt" id="kontakt">
+  <div class="container">
+    <div class="section-rule"></div>
+    <h2 class="section-title">Porozmawiajmy o Twoim <strong>Garden Room</strong></h2>
+    <p class="section-sub">Odpowiadamy w dni robocze — umówimy prezentację na żywo w Robakowie lub online.</p>
+    <div class="contact-wrap">
+      <form class="contact-form" id="kontaktForm" novalidate>
+        <div class="field">
+          <label for="f-name">Imię i nazwisko</label>
+          <input id="f-name" name="name" type="text" placeholder="Jak się do Ciebie zwracać?">
+        </div>
+        <div class="field">
+          <label for="f-contact">Telefon lub e-mail</label>
+          <input id="f-contact" name="contact" type="text" placeholder="np. 600 000 000 lub jan@przyklad.pl">
+        </div>
+        <div class="field">
+          <label for="f-model">Interesuje mnie</label>
+          <select id="f-model" name="model">
+            <option value="BOKA TWO">BOKA TWO</option>
+            <option value="BOKA ONE">BOKA ONE</option>
+            <option value="BOKA COMFORT">BOKA COMFORT</option>
+            <option value="Sauna BOX">Sauna BOX</option>
+            <option value="Sauna MODERN">Sauna MODERN</option>
+            <option value="Projekt na wymiar">Projekt na wymiar</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="f-message">Wiadomość (opcjonalnie)</label>
+          <textarea id="f-message" name="message" placeholder="Np. termin wizyty, pytania o montaż, wymiary działki…"></textarea>
+        </div>
+        <label class="consent">
+          <input type="checkbox" name="consent" required>
+          Zgadzam się na kontakt zwrotny w sprawie mojego zapytania od BOKA Garden Room.
+        </label>
+        <div class="hp-field" aria-hidden="true">
+          <label for="f-website">Strona WWW (zostaw puste)</label>
+          <input id="f-website" type="text" name="website" tabindex="-1" autocomplete="off">
+        </div>
+        <button type="submit" class="btn btn-block">Wyślij zapytanie</button>
+        <div class="form-status" id="kontaktFormStatus"></div>
+        <p class="form-helper">Odpowiadamy zwykle tego samego dnia roboczego.</p>
+      </form>
+      <div class="contact-info">
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <div><div class="t1">Telefon</div><a class="t2" href="tel:+48668476538">+48 668 476 538</a></div>
+        </div>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z"></path><path d="m22 6-10 7L2 6"></path></svg>
+          <div><div class="t1">E-mail</div><a class="t2" href="mailto:info@bokagardenroom.pl">info@bokagardenroom.pl</a></div>
+        </div>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <div><div class="t1">Showroom</div><a class="t2" href="https://www.google.com/maps/search/?api=1&amp;query=Aroniowa+9A+Robakowo" target="_blank" rel="noopener">Ul. Aroniowa 9A, 62-023 Robakowo</a></div>
+        </div>
+        <div class="info-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+          <div><div class="t1">Godziny pracy</div><div class="t2">Pon–Pt 9:00–17:00, Sob 9:00–13:00</div></div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ===== FOOTER ===== -->
-<footer class="site-footer" id="kontakt">
-  <div class="container">
-    <div class="footer-grid">
-      <div>
-        <h4>BOKA Garden Room</h4>
-        <p>Pomagamy oddzielić życie domowe od zawodowego — bez remontów, bez wydzielania pokoju w domu i bez dojazdów.</p>
-        <p>ul. Aroniowa 9A<br>62-023 Robakowo</p>
-        <p><a href="tel:+48668476538">+48 668 476 538</a><br><a href="mailto:info@bokagardenroom.pl">info@bokagardenroom.pl</a></p>
-      </div>
-      <div>
-        <h4>Nawigacja</h4>
-        <p><a href="#produkty">Produkty</a></p>
-        <p><a href="#konfigurator">Konfigurator</a></p>
-        <p><a href="#o-nas">O nas</a></p>
-        <p id="katalog"><a href="assets/docs/katalog-boka.pdf">Pobierz katalog PDF</a></p>
-      </div>
-      <div>
-        <h4>Napisz do nas</h4>
-        <form class="contact-quick-form" id="footerForm" novalidate>
-          <div class="form-field"><input type="email" name="email" placeholder="Twój e-mail *" required></div>
-          <div class="form-field"><textarea name="message" placeholder="Wiadomość" rows="3"></textarea></div>
-          <label style="display:flex;gap:8px;font-size:.75rem;color:rgba(255,255,255,.6);margin-bottom:14px;">
-            <input type="checkbox" name="consent" required style="margin-top:2px;">
-            Zgadzam się na przetwarzanie danych w celu udzielenia odpowiedzi.
-          </label>
-          <button type="submit" class="btn btn-block">Wyślij</button>
-          <div class="form-status" id="footerFormStatus"></div>
-        </form>
-      </div>
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div>
+      <div class="fbrand"><img src="assets/img/logo.svg" alt="">BOKA Garden Room</div>
+      <p class="footer-tagline">Pomagamy oddzielić życie domowe od zawodowego — bez remontów, bez wydzielania pokoju w domu i bez dojazdów.</p>
     </div>
-    <div class="footer-bottom">&copy; <span id="year"></span> BOKA Garden Room. Wszystkie prawa zastrzeżone.</div>
+    <div class="footer-contact">
+      <div class="t1">BOKA Garden Room</div>
+      <div>Ul. Aroniowa 9A</div>
+      <div>62-023 Robakowo</div>
+      <div><a href="tel:+48668476538">+48 668 476 538</a></div>
+      <div><a href="mailto:info@bokagardenroom.pl">info@bokagardenroom.pl</a></div>
+    </div>
+    <a class="btn" href="#kontakt">Napisz do nas</a>
+  </div>
+  <div class="container footer-bottom">
+    <span>&copy; <span id="year"></span> BOKA Garden Room. Wszystkie prawa zastrzeżone.</span>
   </div>
 </footer>
 

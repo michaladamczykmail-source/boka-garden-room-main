@@ -136,37 +136,29 @@
     };
   });
 
-  wireForm('quoteForm', 'quoteFormStatus', function (form) {
-    var modelRaw = (form.querySelector('[name=model]') || {}).value || '';
-    var model = ALLOWED_MODELS.indexOf(modelRaw.trim().toUpperCase().replace('BOKA', 'BOKA')) !== -1 ? modelRaw : 'Projekt na wymiar';
-    var matched = ALLOWED_MODELS.find(function (m) { return modelRaw && m.toLowerCase() === modelRaw.trim().toLowerCase(); });
+  wireForm('kontaktForm', 'kontaktFormStatus', function (form) {
+    var model = (form.querySelector('[name=model]') || {}).value || '';
     return {
       name: (form.querySelector('[name=name]') || {}).value || 'Klient',
-      contact: collectContact(form),
-      model: matched || 'Projekt na wymiar',
-      message: (modelRaw ? 'Zainteresowanie modelem: ' + modelRaw + '\n' : '') + ((form.querySelector('[name=message]') || {}).value || ''),
-      consent: form.querySelector('[name=consent]').checked
-    };
-  });
-
-  wireForm('visitForm', 'visitFormStatus', function (form) {
-    return {
-      name: 'Umówienie wizyty',
-      contact: collectContact(form),
-      model: 'BOKA TWO',
-      message: 'Prośba o umówienie wizyty / prezentacji na żywo.',
-      consent: form.querySelector('[name=consent]').checked
-    };
-  });
-
-  wireForm('footerForm', 'footerFormStatus', function (form) {
-    return {
-      name: 'Wiadomość ze stopki',
-      contact: collectContact(form),
-      model: 'Projekt na wymiar',
+      contact: (form.querySelector('[name=contact]') || {}).value || '',
+      model: ALLOWED_MODELS.indexOf(model) !== -1 ? model : 'Projekt na wymiar',
       message: (form.querySelector('[name=message]') || {}).value || '',
       consent: form.querySelector('[name=consent]').checked
     };
   });
+
+  /* ---- "Zobacz na żywo" — mapa Google na kliknięcie (bez cookies do czasu zgody) ---- */
+  var mapPlaceholder = document.getElementById('mapPlaceholder');
+  if (mapPlaceholder) {
+    mapPlaceholder.addEventListener('click', function () {
+      var frame = mapPlaceholder.parentElement;
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://www.google.com/maps?q=Aroniowa+9A,+62-023+Robakowo&output=embed';
+      iframe.loading = 'lazy';
+      iframe.referrerPolicy = 'no-referrer-when-downgrade';
+      iframe.setAttribute('title', 'Mapa — BOKA Garden Room, Robakowo');
+      frame.replaceChild(iframe, mapPlaceholder);
+    });
+  }
 
 })();
