@@ -70,26 +70,6 @@
     el.className = 'form-status ' + (ok ? 'ok' : 'err');
   }
 
-  function collectContact(form) {
-    var email = (form.querySelector('[name=email]') || {}).value || '';
-    var phone = (form.querySelector('[name=phone]') || {}).value || '';
-    if (email && phone) return email + ' / ' + phone;
-    return email || phone;
-  }
-
-  function buildConfiguratorMessage(form) {
-    var parts = [];
-    ['przeznaczenie', 'styl', 'elewacja', 'stolarka'].forEach(function (name) {
-      var checked = form.querySelector('input[name="' + name + '"]:checked');
-      if (checked) parts.push(checked.value);
-    });
-    var opts = Array.from(form.querySelectorAll('input[name="opcje"]:checked')).map(function (i) { return i.value; });
-    if (opts.length) parts.push('Opcje dodatkowe: ' + opts.join(', '));
-    var notes = (form.querySelector('[name=notes]') || {}).value || '';
-    if (notes.trim()) parts.push('Uwagi: ' + notes.trim());
-    return parts.join('\n');
-  }
-
   function submitContact(payload, statusEl, form) {
     setStatus(statusEl, true, 'Wysyłanie...');
     fetch('api/contact.php', {
@@ -124,17 +104,6 @@
       submitContact(payload, statusEl, form);
     });
   }
-
-  wireForm('configForm', 'configFormStatus', function (form) {
-    var przeznaczenie = (form.querySelector('input[name=przeznaczenie]:checked') || {}).value || 'Konfigurator';
-    return {
-      name: przeznaczenie + ' — konfigurator',
-      contact: collectContact(form),
-      model: 'Projekt na wymiar',
-      message: buildConfiguratorMessage(form),
-      consent: form.querySelector('[name=consent]').checked
-    };
-  });
 
   wireForm('kontaktForm', 'kontaktFormStatus', function (form) {
     var model = (form.querySelector('[name=model]') || {}).value || '';

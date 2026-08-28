@@ -182,27 +182,6 @@ h1, h2, h3, h4 { font-family: var(--font-heading); font-weight: 600; margin: 0 0
 .config-step h4 { font-size: 1rem; }
 .config-step p { font-size: .86rem; color: var(--color-text-muted); }
 
-.config-form { max-width: 760px; margin: 0 auto; background: #fff; border: 1px solid var(--color-border); padding: 40px; }
-.config-group { margin-bottom: 26px; }
-.config-group label.group-label { display: block; font-weight: 700; margin-bottom: 10px; }
-.pill-options { display: flex; flex-wrap: wrap; gap: 10px; }
-.pill-options input { position: absolute; opacity: 0; pointer-events: none; }
-.pill-options .pill {
-  padding: 9px 16px; border: 1px solid var(--color-border); cursor: pointer; font-size: .86rem;
-  transition: all .15s ease; user-select: none;
-}
-.pill-options input:checked + .pill { background: var(--color-accent-dark); color: #fff; border-color: var(--color-accent-dark); }
-.checkbox-list { display: flex; flex-direction: column; gap: 10px; }
-.checkbox-list label { display: flex; gap: 10px; align-items: center; font-size: .9rem; }
-
-.form-field { margin-bottom: 18px; }
-.form-field label { display: block; font-weight: 600; font-size: .86rem; margin-bottom: 6px; }
-.form-field input[type=text], .form-field input[type=email], .form-field input[type=tel], .form-field textarea {
-  width: 100%; padding: 12px 14px; border: 1px solid var(--color-border); font: inherit; background: #fff;
-}
-.form-field textarea { min-height: 90px; resize: vertical; }
-.consent-field { display: flex; gap: 10px; font-size: .8rem; color: var(--color-text-muted); margin-bottom: 20px; }
-.consent-field input { margin-top: 3px; }
 .form-status { margin-top: 14px; font-size: .88rem; }
 .form-status.ok { color: #2e6b2e; }
 .form-status.err { color: var(--color-promo); }
