@@ -198,4 +198,14 @@
     if (acceptAllBtn) acceptAllBtn.addEventListener('click', function () { decideCookies('all'); });
   }
 
+  /* ---- Filmiki produktowe: pełny ekran ---- */
+  document.querySelectorAll('.video-fullscreen-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var iframe = btn.parentElement.querySelector('iframe');
+      if (!iframe) return;
+      var request = iframe.requestFullscreen || iframe.webkitRequestFullscreen || iframe.msRequestFullscreen;
+      if (request) request.call(iframe);
+    });
+  });
+
 })();
